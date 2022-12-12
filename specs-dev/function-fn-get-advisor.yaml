@@ -1,0 +1,55 @@
+include:
+- ./func/*
+kind: ArchiveUploadSpec
+name: func-jNyP
+
+---
+apiVersion: fission.io/v1
+kind: Package
+metadata:
+  creationTimestamp: null
+  name: fn-get-advisor-4a349e58-dc35-4d30-b120-908d538fb536
+  namespace: default
+spec:
+  deployment:
+    checksum: {}
+  environment:
+    name: user-review-env
+    namespace: default
+  source:
+    checksum: {}
+    type: url
+    url: archive://func-jNyP
+status:
+  buildstatus: pending
+  lastUpdateTimestamp: "2022-12-12T16:08:53Z"
+
+---
+apiVersion: fission.io/v1
+kind: Function
+metadata:
+  creationTimestamp: null
+  name: fn-get-advisor
+  namespace: default
+spec:
+  InvokeStrategy:
+    ExecutionStrategy:
+      ExecutorType: newdeploy
+      MaxScale: 3
+      MinScale: 1
+      SpecializationTimeout: 120
+      TargetCPUPercent: 80
+    StrategyType: execution
+  concurrency: 500
+  environment:
+    name: user-review-env
+    namespace: default
+  functionTimeout: 60
+  idletimeout: 120
+  package:
+    functionName: main.get_enums
+    packageref:
+      name: fn-get-advisor-4a349e58-dc35-4d30-b120-908d538fb536
+      namespace: default
+  requestsPerPod: 10000
+  resources: {}
