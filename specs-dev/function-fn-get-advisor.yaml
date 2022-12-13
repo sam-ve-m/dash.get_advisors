@@ -14,7 +14,7 @@ spec:
   deployment:
     checksum: {}
   environment:
-    name: user-review-env
+    name: env-get-advisor
     namespace: default
   source:
     checksum: {}
@@ -42,7 +42,7 @@ spec:
     StrategyType: execution
   concurrency: 500
   environment:
-    name: user-review-env
+    name: env-get-advisor
     namespace: default
   functionTimeout: 60
   idletimeout: 120
