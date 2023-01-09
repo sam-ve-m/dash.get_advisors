@@ -1,6 +1,6 @@
-from src.repository.advisor_enum.repository import AdvisorEnumRepository
-from src.repository.enum_advisor_cache.repository import EnumAdvisorCacheRepository
-from src.repository.base_repository.oracle.repository import OracleBaseRepository
+from func.src.repository.advisor_enum.repository import AdvisorEnumRepository
+from func.src.repository.enum_advisor_cache.repository import EnumAdvisorCacheRepository
+from func.src.repository.base_repository.oracle.repository import OracleBaseRepository
 from tests.test_doubles.doubles import (
     enum_repository_get_cached_enum_dummy,
     enum_repository_get_from_cache_dummy_none,

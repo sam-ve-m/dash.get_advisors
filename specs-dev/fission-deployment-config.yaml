@@ -4,4 +4,4 @@
 apiVersion: fission.io/v1
 kind: DeploymentConfig
 name: ligadash-get-advisors
-uid: 23d646ec-dfbb-4c66-aafe-1453feb0c3bc
+uid: 7f5a0cf7-2fd5-4993-bb3d-dbbcd51e3b37

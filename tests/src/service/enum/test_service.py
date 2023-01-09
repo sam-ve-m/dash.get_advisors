@@ -1,8 +1,8 @@
 from unittest.mock import patch
 import pytest
 
-from src.service.advisor_enum.service import AdvisorEnumService
-from src.repository.advisor_enum.repository import AdvisorEnumRepository
+from func.src.service.advisor_enum.service import AdvisorEnumService
+from func.src.repository.advisor_enum.repository import AdvisorEnumRepository
 
 from tests.test_doubles.doubles import (
     enum_service_get_enums_response_ok,

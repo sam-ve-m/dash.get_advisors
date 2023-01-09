@@ -1,8 +1,8 @@
 from typing import List, Tuple
 
-from src.core.interfaces.repository.advisor_enum.interface import IAdvisorEnumRepository
-from src.repository.enum_advisor_cache.repository import EnumAdvisorCacheRepository
-from src.repository.base_repository.oracle.repository import OracleBaseRepository
+from func.src.core.interfaces.repository.advisor_enum.interface import IAdvisorEnumRepository
+from func.src.repository.enum_advisor_cache.repository import EnumAdvisorCacheRepository
+from func.src.repository.base_repository.oracle.repository import OracleBaseRepository
 
 
 class AdvisorEnumRepository(IAdvisorEnumRepository):
