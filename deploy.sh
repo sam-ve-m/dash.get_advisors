@@ -1,5 +1,4 @@
-#!/usr/bin/bash
 fission spec init
-fission env create --spec --name env-get-advisor --image nexus.sigame.com.br/fission-cx-env-3.8:0.0.3 --builder nexus.sigame.com.br/fission-cx-builder-3.8:0.0.3
-fission fn create --spec --name fn-get-advisor --env env-get-advisor --src "./func/*" --entrypoint main.get_enums --executortype newdeploy
-fission route create --spec --name rt-get-advisor --method GET --url /enum/advisor --function fn-get-advisor
+fission env create --spec --name dash-enum-advisor-env --image nexus.sigame.com.br/fission-ligadash-enum-advisor:0.1.1 --poolsize 0 --version 3 --imagepullsecret "nexus-v3" --spec
+fission fn create --spec --name dash-enum-advisor-fn --env dash-enum-advisor-env --code fission.py --targetcpu 80 --executortype newdeploy --maxscale 3 --requestsperpod 10000 --spec
+fission route create --spec --name dash-enum-advisor-rt --method GET --url /enum/advisor --function dash-enum-advisor-fn
